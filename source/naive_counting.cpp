@@ -13,15 +13,13 @@ struct my_traits:seqan3::sequence_file_input_default_traits_dna {
 uint64_t naive_couting(const std::filesystem::path &filepath)
 {
     // TODO: implement naive counting here
-    std::unordered_set<uint64_t> kmerset;
     auto stream = seqan3::sequence_file_input<my_traits>{filepath};
     auto kmer_view = seqan3::views::kmer_hash(seqan3::ungapped{k});
     for(auto & record : stream) {
         for(auto && kmer : record.sequence() | kmer_view) {
-            kmerset.insert(kmer);
         }
     }
-    return kmerset.size();
+    return 0;
 }
 
 
