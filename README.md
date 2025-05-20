@@ -26,14 +26,14 @@ make
 
 Test
 ```
-.build/source/naivecounting "data/ecoli1_k31_ust.fa.gz"
+./build/source/naivecounting "data/ecoli1_k31_ust.fa.gz"
 ```
 
 Create a virtual python environment
 ```
 python3 -m venv venv
 source venv/bin/activate
-python3 -m pip install psutil, matplotlib, numpy, notebook
+python3 -m pip install -r requirements.txt
 ```
 
 Test
